@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.7.2)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - JTAppleCalendar (7.1.5)
+  - Popover (1.2.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - JTAppleCalendar (~> 7.0)
+  - Popover
+  - SVProgressHUD
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - JTAppleCalendar
+    - Popover
+    - SVProgressHUD
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
+  Popover: 28c1ac8e937ab2b3965bd2da7dd18324357abc41
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: b0c3e73a3e23b3ad5d43d46b6fab52f33c58d394
+
+COCOAPODS: 1.5.0

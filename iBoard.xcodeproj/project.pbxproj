@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3289F6E85B7C8A938BCA97 /* Pods_iBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006A19728FD5EE1175E3958 /* Pods_iBoard.framework */; };
+		C12AED0B20DE6C7F00943C2A /* MeetingDocsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AED0A20DE6C7F00943C2A /* MeetingDocsViewController.swift */; };
+		C12AED0D20DE6C9700943C2A /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AED0C20DE6C9700943C2A /* DocumentViewController.swift */; };
+		C153A22320DD0B520010AAF8 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153A22220DD0B520010AAF8 /* Global.swift */; };
+		C15F004920F62175005C6A9A /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F004820F62175005C6A9A /* CalendarViewCell.swift */; };
+		C17F689520F4A35200AAE307 /* MeetingScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F689420F4A35200AAE307 /* MeetingScheduleController.swift */; };
 		C1A53D4420D149D20071B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A53D4320D149D20071B88C /* AppDelegate.swift */; };
-		C1A53D4620D149D20071B88C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A53D4520D149D20071B88C /* ViewController.swift */; };
 		C1A53D4920D149D20071B88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A53D4720D149D20071B88C /* Main.storyboard */; };
 		C1A53D4C20D149D20071B88C /* iBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1A53D4A20D149D20071B88C /* iBoard.xcdatamodeld */; };
 		C1A53D4E20D149D30071B88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1A53D4D20D149D30071B88C /* Assets.xcassets */; };
 		C1A53D5120D149D30071B88C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A53D4F20D149D30071B88C /* LaunchScreen.storyboard */; };
+		C1ABCBEB20EC95BE00B3751D /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ABCBEA20EC95BD00B3751D /* StringHelper.swift */; };
+		C1D2396920D92B7F00EE62DD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D2396820D92B7F00EE62DD /* Default-568h@2x.png */; };
+		C1D2396B20D92BCB00EE62DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2396A20D92BCB00EE62DD /* LoginViewController.swift */; };
+		C1E2048220E20E8500F3CD16 /* DocumentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E2048120E20E8500F3CD16 /* DocumentAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0006A19728FD5EE1175E3958 /* Pods_iBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		562A93E8D3597215494814E5 /* Pods-iBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBoard/Pods-iBoard.release.xcconfig"; sourceTree = "<group>"; };
+		9871B336CA4B5EA88C4F6D72 /* Pods-iBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBoard/Pods-iBoard.debug.xcconfig"; sourceTree = "<group>"; };
+		C110195E20E2328B00EDEE4E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C12AED0A20DE6C7F00943C2A /* MeetingDocsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingDocsViewController.swift; sourceTree = "<group>"; };
+		C12AED0C20DE6C9700943C2A /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		C153A22220DD0B520010AAF8 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		C15F004820F62175005C6A9A /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
+		C17F689420F4A35200AAE307 /* MeetingScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingScheduleController.swift; sourceTree = "<group>"; };
 		C1A53D4020D149D20071B88C /* iBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A53D4320D149D20071B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1A53D4520D149D20071B88C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1A53D4820D149D20071B88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1A53D4B20D149D20071B88C /* iBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iBoard.xcdatamodel; sourceTree = "<group>"; };
 		C1A53D4D20D149D30071B88C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A53D5020D149D30071B88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C1A53D5220D149D30071B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1ABCBEA20EC95BD00B3751D /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		C1D2396820D92B7F00EE62DD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C1D2396A20D92BCB00EE62DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C1E2048120E20E8500F3CD16 /* DocumentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3289F6E85B7C8A938BCA97 /* Pods_iBoard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22F9419DC41DACCB945CDAB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9871B336CA4B5EA88C4F6D72 /* Pods-iBoard.debug.xcconfig */,
+				562A93E8D3597215494814E5 /* Pods-iBoard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4D11F2754A35921A22E2D00E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0006A19728FD5EE1175E3958 /* Pods_iBoard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C153A22120DD0B340010AAF8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C153A22220DD0B520010AAF8 /* Global.swift */,
+				C1E2048120E20E8500F3CD16 /* DocumentAnnotation.swift */,
+				C1ABCBEA20EC95BD00B3751D /* StringHelper.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		C1A53D3720D149D20071B88C = {
 			isa = PBXGroup;
 			children = (
 				C1A53D4220D149D20071B88C /* iBoard */,
+				C1A53D4320D149D20071B88C /* AppDelegate.swift */,
+				C110195E20E2328B00EDEE4E /* Info.plist */,
 				C1A53D4120D149D20071B88C /* Products */,
+				22F9419DC41DACCB945CDAB0 /* Pods */,
+				4D11F2754A35921A22E2D00E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +108,44 @@
 		C1A53D4220D149D20071B88C /* iBoard */ = {
 			isa = PBXGroup;
 			children = (
-				C1A53D4320D149D20071B88C /* AppDelegate.swift */,
-				C1A53D4520D149D20071B88C /* ViewController.swift */,
-				C1A53D4720D149D20071B88C /* Main.storyboard */,
-				C1A53D4D20D149D30071B88C /* Assets.xcassets */,
-				C1A53D4F20D149D30071B88C /* LaunchScreen.storyboard */,
-				C1A53D5220D149D30071B88C /* Info.plist */,
-				C1A53D4A20D149D20071B88C /* iBoard.xcdatamodeld */,
+				C1D2396620D92B0000EE62DD /* Model */,
+				C1D2396520D92AF300EE62DD /* Controllers */,
+				C1D2396420D92AD600EE62DD /* View */,
+				C153A22120DD0B340010AAF8 /* Classes */,
 			);
 			path = iBoard;
+			sourceTree = "<group>";
+		};
+		C1D2396420D92AD600EE62DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C1A53D4D20D149D30071B88C /* Assets.xcassets */,
+				C1D2396820D92B7F00EE62DD /* Default-568h@2x.png */,
+				C1A53D4F20D149D30071B88C /* LaunchScreen.storyboard */,
+				C1A53D4720D149D20071B88C /* Main.storyboard */,
+				C15F004820F62175005C6A9A /* CalendarViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C1D2396520D92AF300EE62DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C1D2396A20D92BCB00EE62DD /* LoginViewController.swift */,
+				C17F689420F4A35200AAE307 /* MeetingScheduleController.swift */,
+				C12AED0A20DE6C7F00943C2A /* MeetingDocsViewController.swift */,
+				C12AED0C20DE6C9700943C2A /* DocumentViewController.swift */,
+			);
+			name = Controllers;
+			path = ../Controllers;
+			sourceTree = "<group>";
+		};
+		C1D2396620D92B0000EE62DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1A53D4A20D149D20071B88C /* iBoard.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1A53D5520D149D30071B88C /* Build configuration list for PBXNativeTarget "iBoard" */;
 			buildPhases = (
+				137C9C6E13D4AE48D0612ED8 /* [CP] Check Pods Manifest.lock */,
 				C1A53D3C20D149D20071B88C /* Sources */,
 				C1A53D3D20D149D20071B88C /* Frameworks */,
 				C1A53D3E20D149D20071B88C /* Resources */,
+				209A972A584228B59443CE38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1A53D5120D149D30071B88C /* LaunchScreen.storyboard in Resources */,
+				C1D2396920D92B7F00EE62DD /* Default-568h@2x.png in Resources */,
 				C1A53D4E20D149D30071B88C /* Assets.xcassets in Resources */,
 				C1A53D4920D149D20071B88C /* Main.storyboard in Resources */,
 			);
@@ -133,13 +217,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		137C9C6E13D4AE48D0612ED8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iBoard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		209A972A584228B59443CE38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iBoard/Pods-iBoard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBoard/Pods-iBoard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C1A53D3C20D149D20071B88C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1A53D4620D149D20071B88C /* ViewController.swift in Sources */,
+				C1E2048220E20E8500F3CD16 /* DocumentAnnotation.swift in Sources */,
+				C1D2396B20D92BCB00EE62DD /* LoginViewController.swift in Sources */,
+				C153A22320DD0B520010AAF8 /* Global.swift in Sources */,
 				C1A53D4C20D149D20071B88C /* iBoard.xcdatamodeld in Sources */,
+				C1ABCBEB20EC95BE00B3751D /* StringHelper.swift in Sources */,
+				C12AED0D20DE6C9700943C2A /* DocumentViewController.swift in Sources */,
+				C17F689520F4A35200AAE307 /* MeetingScheduleController.swift in Sources */,
+				C15F004920F62175005C6A9A /* CalendarViewCell.swift in Sources */,
+				C12AED0B20DE6C7F00943C2A /* MeetingDocsViewController.swift in Sources */,
 				C1A53D4420D149D20071B88C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -271,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -282,16 +422,17 @@
 		};
 		C1A53D5620D149D30071B88C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9871B336CA4B5EA88C4F6D72 /* Pods-iBoard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AN6FVNL9A;
-				INFOPLIST_FILE = iBoard/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.solutions.epique.iBoard;
+				PRODUCT_BUNDLE_IDENTIFIER = ke.co.epique.iboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,16 +441,17 @@
 		};
 		C1A53D5720D149D30071B88C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 562A93E8D3597215494814E5 /* Pods-iBoard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AN6FVNL9A;
-				INFOPLIST_FILE = iBoard/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.solutions.epique.iBoard;
+				PRODUCT_BUNDLE_IDENTIFIER = ke.co.epique.iboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
