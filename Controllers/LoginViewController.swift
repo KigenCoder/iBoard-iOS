@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import CoreData
-import SVProgressHUD
-import ChameleonFramework
+import iProgressHUD
+
+
 
 
 
@@ -19,6 +20,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     
     var currentUser = [User]()
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -28,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         txtEmail.delegate = self
         txtPassword.delegate = self
         getCurrentUser()
@@ -53,10 +55,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         
         let login_url = "\(Global.baseUrl())/app_login"
         
-        SVProgressHUD.show(withStatus: "Processing...")
+        Global.showProgressView(self.view)
         
         Alamofire.request(login_url, method: .post, parameters: params).responseJSON {
             response in
+            
             if response.result.isSuccess {
                 
                 let responseJSON : JSON = JSON(response.result.value!)
@@ -68,10 +71,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             else {
                 print("Error \(String(describing: response.result.error))")
             }
+            self.view.dismissProgress()
         }
-        
-        SVProgressHUD.dismiss()
-        
     }
     
     //Save logged in user
@@ -91,6 +92,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         let request : NSFetchRequest<User> = User.fetchRequest()
         do{
             currentUser = try context.fetch(request);
+            
         }catch{
             print("Error fetchin User")
         }

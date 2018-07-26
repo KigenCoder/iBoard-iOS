@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 import Alamofire
 import SwiftyJSON
-import SVProgressHUD
+import iProgressHUD
 import JTAppleCalendar
-import ChameleonFramework
+
 
 class MeetingScheduleController: UIViewController {
     //MARK:- Properties
@@ -27,6 +27,8 @@ class MeetingScheduleController: UIViewController {
     var selectedMeeting : Meeting?
     var todaysMeetings = [Meeting]()
     
+    
+
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - View Life Cycle
@@ -37,7 +39,18 @@ class MeetingScheduleController: UIViewController {
         getUserOrganizationId()
         
         //Custom setup
-        setup()
+        setupCalendar()
+        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Global.showProgressView(view)
+        //Scroll to the present month
+        //self.calendarView.scrollToHeaderForDate(Date())
+    
+        self.calendarView.scrollToDate(Date())
         
     }
     
@@ -46,7 +59,7 @@ class MeetingScheduleController: UIViewController {
         //If meetings get only the ones not saved
         
         //Saved on users phone for offline access
-        
+
         getCachedMeetings()
         
         var saved_meeting_ids = [String]()
@@ -63,22 +76,18 @@ class MeetingScheduleController: UIViewController {
     
     
     //MARK: - Custom code
-    func setup(){
+    func setupCalendar(){
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         //Set up Year Month Label for the first year
-        calendarView.minimumInteritemSpacing = 3
-        calendarView.minimumLineSpacing = 3
-        //Scroll to the present month
-        self.calendarView.scrollToDate(Date())
+        calendarView.minimumInteritemSpacing = 2
+        calendarView.minimumLineSpacing = 2
+        
         
         //Change month year
         self.calendarView.visibleDates {[unowned self] (visibleDates: DateSegmentInfo) in
             self.monthYearLabel(from: visibleDates)
         }
-        
-     
-        
         
         //Change month year
         //calendarView.visibleDates { (visibleDates) in
@@ -87,18 +96,18 @@ class MeetingScheduleController: UIViewController {
         
     }
     
-    
-    
-    
-    
+
     func getUserOrganizationId(){
+        
         do{
             let result : NSFetchRequest<User> = User.fetchRequest();
             let user : [User] = try context.fetch(result)
             
             if(user.count > 0){
-                let current_user = user.first
-                self.organization_id = (current_user?.organization_id)!
+                if let org_id = user.first?.organization_id!{
+                self.organization_id = org_id
+                }
+                
             }
         }catch{
             print("Error fetching user: \(error)")
@@ -125,6 +134,8 @@ class MeetingScheduleController: UIViewController {
                 }
                 
             }
+            
+           
         }
         
     }
@@ -161,6 +172,8 @@ class MeetingScheduleController: UIViewController {
         }catch{
             print("Error fetching meetings: \(error)")
         }
+        
+        view.dismissProgress()
         
     }
     
@@ -211,6 +224,7 @@ class MeetingScheduleController: UIViewController {
     
     //Change the background of the cell
     func handleCellDisplay(cell: CalendarViewCell, cellState: CellState, date: Date){
+        
         cell.dateLabel.text = cellState.text
         
         let todaysMeetings = getTodaysMeetings(date: date)
@@ -220,13 +234,15 @@ class MeetingScheduleController: UIViewController {
         }else{
             cell.selectedView.isHidden = true
         }
-        
+
         //Cell text color
         if cellState.dateBelongsTo == .thisMonth{
             cell.dateLabel.textColor = UIColor.black
         }else{
             cell.dateLabel.textColor = UIColor.lightGray
         }
+        
+        view.dismissProgress()
         
     }
     
@@ -279,8 +295,10 @@ extension MeetingScheduleController: JTAppleCalendarViewDelegate{
     public func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         monthYearLabel(from: visibleDates)
         todaysMeetings = [Meeting]()
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
+    
+
     
     func handleCellSelection(date: Date){
         todaysMeetings = getTodaysMeetings(date: date)
@@ -290,8 +308,10 @@ extension MeetingScheduleController: JTAppleCalendarViewDelegate{
             tableView.reloadData()
         }else{
             todaysMeetings = [Meeting]()
-            tableView.reloadData()
+            
         }
+        
+        tableView.reloadData()
     }
     
     public func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
@@ -323,16 +343,16 @@ extension MeetingScheduleController : UITableViewDelegate{
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         if let start = meeting.start_time , let end = meeting.end_time{
-            var meeting_time = "Date: "
+            //print(meeting.start_time)
+            var meeting_time = ""
             let startDate : Date = formatter.date(from: start)!
             let endDate : Date = formatter.date(from: end)!
             formatter.dateFormat = "dd/MM/yyyy"
             meeting_time += formatter.string(from: startDate)
-            formatter.dateFormat = "HH:mm"
+            formatter.dateFormat = "HH:mm a"
             let start_time = formatter.string(from: startDate)
             let end_time = formatter.string(from: endDate)
-            meeting_time += "\(meeting_time) From: \(start_time) To: \(end_time)"
-            meetingTimeLabel.text = meeting_time
+            meetingTimeLabel.text = "Date: \(meeting_time) From: \(start_time) To: \(end_time)"
         }
         meetingVenueLabel.text = "Venue: \(meeting.meeting_venue ?? "")"
         

@@ -9,7 +9,7 @@
 import UIKit
 import PDFKit
 import QuartzCore
-import ChameleonFramework
+
 
 class DocumentViewController: UIViewController{
     
@@ -18,7 +18,7 @@ class DocumentViewController: UIViewController{
     let base_url = "http://iboard.dev"
     var pdfView: PDFView!
     var points = [CGPoint]()
-    var highlightColor : UIColor = UIColor.flatGreen
+    var highlightColor : UIColor = UIColor.green
     
     
     
@@ -64,18 +64,18 @@ class DocumentViewController: UIViewController{
         
         let redAnnotationButton = UIBarButtonItem(image:UIImage(named: "red_pen"), style:.plain, target: self, action:#selector(changeHighlightColor(sender:)))
         redAnnotationButton.tag = 1000
-        redAnnotationButton.tintColor = UIColor.flatRed
+        redAnnotationButton.tintColor = UIColor.red
         
         let greenAnnotationButton = UIBarButtonItem(image:UIImage(named: "green_pen"), style:.plain, target: self, action:#selector(changeHighlightColor(sender:)))
-        greenAnnotationButton.tintColor = UIColor.flatGreen
+        greenAnnotationButton.tintColor = UIColor.green
         greenAnnotationButton.tag = 1001
         
         let yellowAnnotationButton =  UIBarButtonItem(image:UIImage(named: "yellow_pen"), style:.plain, target: self, action:#selector(changeHighlightColor(sender:)))
-        yellowAnnotationButton.tintColor = UIColor.flatYellow
+        yellowAnnotationButton.tintColor = UIColor.yellow
         yellowAnnotationButton.tag = 1002
         
         let orangeAnnotationButton =  UIBarButtonItem(image:UIImage(named: "orange_pen"), style:.plain, target: self, action:#selector(changeHighlightColor(sender:)))
-        orangeAnnotationButton.tintColor = UIColor.flatOrange
+        orangeAnnotationButton.tintColor = UIColor.orange
         orangeAnnotationButton.tag = 1003
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: #selector(changeHighlightColor(sender:)))
@@ -115,8 +115,8 @@ class DocumentViewController: UIViewController{
     
     
     func saveLocal(){
+        Global.showProgressView(view)
         if let remoteDocUrl = URL(string: Global.baseUrl() + "/" + document_path),
-            
             let fileData = try? Data(contentsOf: remoteDocUrl){
             
             let localDocUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last as NSURL?
@@ -130,6 +130,7 @@ class DocumentViewController: UIViewController{
                 print("Error saving: \(filename)")
             }
         }
+        view.dismissProgress()
     }
     
     //Display local Doc

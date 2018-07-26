@@ -10,16 +10,17 @@ import UIKit
 import CoreData
 import Alamofire
 import SwiftyJSON
-import SVProgressHUD
+import iProgressHUD
+
 
 class MeetingDocsViewController: UITableViewController {
 
-    
     var meeting_title = ""
     let base_url = "http://iboard.dev"
     
     var meeting : Meeting? {
         didSet{
+            
             //Fetch locally stored documents
             getCachedDocs()
             
@@ -49,9 +50,10 @@ class MeetingDocsViewController: UITableViewController {
     }
     
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Global.showProgressView(view)
+
     }
 
     
@@ -60,19 +62,15 @@ class MeetingDocsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - Custom code
-    
-    //Fetch Meeting Documents
+    //MARK: - Custom code Fetch Meeting Documents
     func fetchFromServer(saved_ids : Array<String>) {
             if let meeting_id = meeting?.meeting_id{
-            SVProgressHUD.show(withStatus: "Processing......")
             let docs_url = "\(Global.baseUrl())/meeting_docs"
             
             //let saved_doc_ids = [String]()
            
             let params : [String : Any] = ["meeting_id" : meeting_id, "saved_doc_ids" : saved_ids]
-            
-            
+  
             //Alamofire.request(login_url, method: .post, parameters: params).responseJSON {
             Alamofire.request(docs_url, method: .post, parameters : params).responseJSON {
                 response in
@@ -82,11 +80,18 @@ class MeetingDocsViewController: UITableViewController {
                     self.saveDocs(json: responseJSON)
                     
                 }else{
+                    
                     print("Meetings Error:\(String(describing: response.result.error))")
                 }
                 
-            }
-            SVProgressHUD.dismiss()
+                }.downloadProgress(queue: DispatchQueue.global()) { (progress) in
+                   print("\(progress.fractionCompleted)")
+                    if(progress.fractionCompleted == 1.0){
+                        //self.view.dismissProgress()
+                    }
+                    
+                }
+           
         
         }
     }
@@ -110,6 +115,8 @@ class MeetingDocsViewController: UITableViewController {
                     }
                 }
             }
+            
+           
         }
         
         getCachedDocs()
@@ -128,6 +135,7 @@ class MeetingDocsViewController: UITableViewController {
             print("Error fetching cached docs: \(error)")
         }
         tableView.reloadData()
+        view.dismissProgress()
         
     }
     //Save context to coredata
